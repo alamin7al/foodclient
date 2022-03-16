@@ -1,29 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Home from './Componenet/Home';
-import AuthProvider from './Componenet/LoginPage/AuthProvider';
-import Register from './Componenet/LoginPage/Register';
-import Login from './Componenet/LoginPage/Login';
-import Navigation from './Componenet/UnknownFile/Navigation';
-import UserProfile from './Componenet/UserProfile/UserProfile';
-import EditProfile from './Componenet/UserProfile/EditProfile';
-import UserEdit from './Componenet/CrudOparetor/UserEdit';
-import CrudSetUp from './Componenet/CrudOparetor/CrudSetUp';
-import Menubuy from './Componenet/Menu/Menubuy';
-import Menuorder from './Componenet/Menu/Menuorder';
-import TourSetUp from './Componenet/TourComponent/TourSetUp';
-import MenuSetup from './Componenet/Menu/MenuSetup';
-import PrivateRoute from './Componenet/LoginPage/PrivateRoute';
-
-function App() {
-  const menu = [
+const menu = [
     {
       id: 1,
       title: 'buttermilk pancakes',
@@ -105,55 +80,4 @@ function App() {
       desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing. kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut`,
     },
   ];
-  return (
-    <div className="App">
-      <AuthProvider>
-        <Router>
-          <Navigation></Navigation>
-          <div>
-            <Switch>
-              <Route path="/register">
-                <Register />
-              </Route>
-              <Route path="/login">
-                <Login />
-              </Route>
-              <Route path="/tour">
-                <TourSetUp />
-              </Route>
-              <Route path="/menu">
-                <MenuSetup />
-              </Route>
-              <Route path="/crud">
-                <CrudSetUp />
-              </Route>
-              <Route path="/home">
-                <Home />
-              </Route>
-              <Route path="/useredit/:id">
-                <UserEdit />
-              </Route>
-              <Route path="/editprofile/:id">
-                <EditProfile />
-              </Route>
-              <Route path="/menuorder">
-                <Menuorder />
-              </Route>
-              <PrivateRoute path="/menubuy/:ids">
-                <Menubuy menu={menu} />
-              </PrivateRoute>
-              <Route path="/profile">
-                <UserProfile />
-              </Route>
-              <Route path="/">
-                <Home />
-              </Route>
-            </Switch>
-          </div>
-        </Router>
-      </AuthProvider>
-    </div>
-  );
-}
-
-export default App;
+  export default menu;
